@@ -14,6 +14,7 @@ Go to `src/app.ts` and search for `// TASK_1`.
 Under it, add the code to load the bunnies spritesheet.
 
 To load the spritesheet in the sprite cache you can take example on the `items` one that is already there.
+You won't see anything change yet in the game as you need to use the sprite (see task 2).
 
 ℹ️ The file `src/resources.ts` contains a map of the resources paths.
 
@@ -178,8 +179,11 @@ In this `updateItem` function we want to:
   - If it's a bomb we want to go to game over
 
 Careful, to remove an item you need to both remove the sprite from the road (`this`) and return false.
+
 ℹ️ To remove a child sprite you can call `this.removeChild(child: cc.Node)`
-  
+
 ℹ️ To go to game over you can call `this.gameDelegate.onGameOver()`
+
 ℹ️ To increase score you can call `this.gameDelegate.onScoreIncrease()`
+
 ℹ️ To check for collision you can use `cc.rectIntersectsRect(cc.Rect, cc.Rect)` and `mySprite.getBoundingBox(): cc.Rect`.
