@@ -78,7 +78,7 @@ this.runAction(infiniteAnimateAction)
 ```
 
 If you want to spice things up a bit, you can try using `cc.spawn([...actions])` (run all actions from the array in parallel) and `cc.sequence([...actions])` (run actions from the array one after another).
-Combining those with `cc.scale(duration, scaleX, scaleY)` would let make the bunny grow up and down as it hops :).
+Combining those with `cc.scaleTo(duration, scaleX, scaleY)` would let make the bunny grow up and down as it hops :).
 
 ## Task 4
 
