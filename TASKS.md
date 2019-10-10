@@ -41,8 +41,8 @@ _Goal_: Make the bunny hop!
 
 The `startHopAnimation` method from the `BunnySprite` class will be called to make the bunny start it's hoping animation.
 
-Animations in cocos2d are a subset of Actions.
-There are various actions you can do, like moving from a position to another, scaling, changing opacity and more.
+Animate Actions in cocos2d are a subset of Actions.
+There are various Actions you can do, like moving from a position to another, scaling, changing opacity and more.
 See [here](https://docs.cocos2d-x.org/cocos2d-x/v3/en/actions/) for more details on what's possible.
 
 In this case you will want to follow the following steps.
@@ -59,16 +59,22 @@ const animation = new cc.Animation(
 )
 ```
 
-Then you can wrap your animation in `cc.repeatForever` that will make the animation loop.
+You can then turn your animation into an action by wrapping it in `cc.animate(animation : Animation): Animate`:
 
 ```typescript
-const infiniteAnimation = cc.repeatForever(animation)
+const animateAction = cc.animate(animation)
+```
+
+Then you can wrap your Animate Actions in `cc.repeatForever` that will make the animation loop.
+
+```typescript
+const infiniteAnimateAction = cc.repeatForever(animateAction)
 ```
 
 Finally ask the sprite to run the action!
 
 ```typescript
-this.runAction(infiniteAnimation)
+this.runAction(infiniteAnimateAction)
 ```
 
 If you want to spice things up a bit, you can try using `cc.spawn([...actions])` (run all actions from the array in parallel) and `cc.sequence([...actions])` (run actions from the array one after another).
