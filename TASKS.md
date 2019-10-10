@@ -151,9 +151,10 @@ They both already have a sprite created: `CarrotSprite` and `BombSprite`.
 
 You need to:
 
-- pick a type of item at random
+- Pick a type of item at random
 - Create the right sprite for it
-- Position the sprite and add it to the road (hint: `this.addChild()`)
+- Add the sprite to the road (hint: `this.addChild()`)
+- Position the sprite in it's lane and on the top of the screen
 - Push the item in the `this.items` array.
   - The format of items objects in that array is: `{type: 'carrot' | 'bomb', lane: 0 | 1, sprite: cc.Sprite}`
 
